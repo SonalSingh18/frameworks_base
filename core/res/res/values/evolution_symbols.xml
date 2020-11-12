@@ -164,4 +164,8 @@
 
     <!-- Prop/KeyboxImitationHooks -->
     <java-symbol type="array" name="config_certifiedKeybox" />
+
+    <!-- Aerr -->
+    <java-symbol type="id" name="aerr_disable" />
+
 </resources>
