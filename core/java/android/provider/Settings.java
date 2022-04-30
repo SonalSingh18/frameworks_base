@@ -6695,6 +6695,11 @@ public final class Settings {
         public static final String DEFAULT_MAX_MUSIC_VOLUME = "default_max_music_volume";
 
         /**
+         * @hide
+         */
+        public static final String QS_TRANSPARENCY = "qs_transparency";
+
+        /**
          * Override max volume for {@link android.media.AudioSystem.STREAM_ALARM}
          * see {@link com.android.server.audio.AudioService} for defaults in priority
          * -1 = disabled
