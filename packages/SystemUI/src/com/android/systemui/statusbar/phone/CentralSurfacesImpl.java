@@ -294,6 +294,9 @@ import javax.inject.Provider;
 public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces,
         TunerService.Tunable {
 
+    private static final String QS_TRANSPARENCY =
+            "system:" + Settings.System.QS_TRANSPARENCY;
+
     private static final String BANNER_ACTION_CANCEL =
             "com.android.systemui.statusbar.banner_action_cancel";
     private static final String BANNER_ACTION_SETUP =
@@ -940,6 +943,8 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces,
         mKeyguardIndicationController.init();
 
         mColorExtractor.addOnColorsChangedListener(mOnColorsChangedListener);
+
+        mTunerService.addTunable(this, QS_TRANSPARENCY);
 
         mNeedsNavigationBar = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
@@ -3169,6 +3174,10 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces,
                 break;
             default:
                 break;
+         }
+      if (QS_TRANSPARENCY.equals(key)) {
+          mScrimController.setCustomScrimAlpha(
+             TunerService.parseInteger(newValue, 100));
          }
     }
 
