@@ -56,4 +56,8 @@
 
     <!-- Preferred max refresh rate at AOD & Ambient Display, if supported by the display. -->
     <integer name="config_aodMaxRefreshRate">-1</integer>
+
+    <!-- Whether to play turbulence noise after clicking the play button -->
+    <bool name="config_turbulenceNoise">true</bool>
+
 </resources>
